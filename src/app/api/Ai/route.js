@@ -2,7 +2,7 @@
   import { NextResponse } from 'next/server';
 
   export async function POST(req) {
-      const genAI = new GoogleGenerativeAI("AIzaSyBpPxqndvZHsOeGTYT3caKQG6aa996GNjQ");
+      const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
       const data = await req.json();
       const prompt = data.prompt;
          console.log(`Prompt: ${prompt}`);
