@@ -4,7 +4,8 @@
   export async function POST(req) {
       const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
       const data = await req.json();
-      const prompt = data.prompt;
+      const prePrompt = "Give a suitable answer if the following is relevant to product enquiries otherwise repond with 'I Cannot help you with that' : ";
+      const prompt =  prePrompt+data.prompt;
          console.log(`Prompt: ${prompt}`);
       try {
           const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
