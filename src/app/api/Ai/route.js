@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { NextResponse } from 'next/server';
 
+
 export async function POST(req) {
     const genAI = new GoogleGenerativeAI("AIzaSyBjgc6ur1iko7Ii8WIXOCFhNiRhtqB2oU4");
     const data = await req.json();
@@ -43,11 +44,14 @@ User Task: ${prompt}
             .join('\n');
 
         // Return as plain text list
-       
-       console.log(`Output: ${cleanedText}`);
-        return NextResponse.json({cleanedText});
+
+        console.log(`Output: ${cleanedText}`);
+        return NextResponse.json({ cleanedText });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'An error occurred while generating content' }, { status: 500 });
     }
 }
+
+
+
