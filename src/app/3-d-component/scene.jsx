@@ -37,9 +37,14 @@ export default function Scene() {
   //     }
   //     renderer.render(scene,camera);
   //   }
+
+
   // })
   return (
     <>
+
+
+
       <div className='h-screen w-full flex justify-center items-center bg-gradient-to-bl from-dark via-gray-50% to-slate-900 text-white'
       ><div className="h-9/12  min-w-6xl border-4 border-gray-500 hover:border-gray-300 transition-all duration-100 ease-in  ">
         <Canvas 
@@ -53,7 +58,7 @@ export default function Scene() {
             <Model scale={0.5}  />
               <directionalLight position={[0, 20, 10]} intensity={0.75} />
           </Suspense>
-          <OrbitControls enableDamping enableZoom={true} enableRotate={true}/>
+          <OrbitControls enableDamping enableZoom={true} enableRotate={true} />
         </Canvas>
         
       </div></div>

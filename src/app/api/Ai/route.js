@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 
 export async function POST(req) {
-    const genAI = new GoogleGenerativeAI("AIzaSyBjgc6ur1iko7Ii8WIXOCFhNiRhtqB2oU4");
+    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
     const data = await req.json();
     const prePrompt = "Give a suitable answer if the following is relevant to product enquiries otherwise repond with 'I Cannot help you with that' : ";
     const prompt = data.prompt;

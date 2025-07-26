@@ -97,8 +97,9 @@ export default function Artificial() {
       alert("Please enter text");
       return;
     }
-    console.log(`Input: ${input}`);
+    
     setLoading(true);
+
     try {
       const res = await fetch('/api/Ai', {
         method: 'POST',
@@ -112,6 +113,7 @@ export default function Artificial() {
       const generatedData = data.cleanedText.split('\n').map(item => item.trim()).filter(item => item !== '');
       setResponse(generatedData);
       setCheckedItems({})
+      
     } catch (error) {
       console.error('Error fetching response:', error);
       alert('Failed to fetch response. Please try again.');
